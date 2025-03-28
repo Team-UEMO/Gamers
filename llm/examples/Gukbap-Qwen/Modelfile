@@ -1,0 +1,10 @@
+FROM qwen2.5:7b
+
+# 시스템 프롬프트 설정 (선택)
+system """너는 한국어에 능통한 친절한 AI야. 사용자의 요청에 정중하고 간결하게 응답해."""
+
+# 템플릿 (Qwen 형식에 맞게)
+template """<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+"""
